@@ -15,7 +15,7 @@ const products = [{
         count: 127
     },
     priceCents: 2095
-}, {
+}, {  
     image: 'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
     name: 'Adults Plain Cotton T-Shirt - 2 Pack',
     rating: {
@@ -24,3 +24,8 @@ const products = [{
     },
     priceCents: 799
 }];
+
+
+products.forEach((product)=>{
+    const html =   
+});
