@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .js-button{
+            width: 120px;
+               padding-bottom: 5px;            
+            padding-top: 5px;
+            border-radius: 12px;
+            border: 0px;
+            background-color: rgba(219, 200, 24, 0.938); 
+            color: rgb(90, 90, 90);  
+            font-family: Arial;
+            font-size: 12px;
+        }
+        .circle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background-color:rgb(0,118,0);
+    color:white;
+    font-size:12px;
+    margin-right:6px;
+}
+
+    </style>
+</head>
+<body>
+    <div> 
+        <p class="to-add js-to-add"></p>
+   <button class="js-button">Add to Cart</button>
+</div>
+   <div>
+    <p class="to-do"></p>
+    <button class="js-button js-bot">Add to Cart</button>
+</div>
+
+   <script>
+
+    const button = document.querySelector('.js-button');
+     button.addEventListener('click',() => {
+      document.querySelector('.js-to-add').innerHTML = '<span class="circle">&#10003</span> Added';
+      setTimeout(()=>{
+     document.querySelector('.js-to-add').innerHTML = '';
+}, 2000);
+
+});
+const message = document.querySelector('.to-do')
+  const bot = document.querySelector('.js-bot');
+
+  bot.addEventListener('click', ()=>{
+     if(message.innerHTML === ''){
+        message.innerHTML ='<span class="circle">&#10003</span> Added';
+     }else{
+        message.innerHTML = '';
+     }
+  });
+
+   </script>
+</body>
+</html>
