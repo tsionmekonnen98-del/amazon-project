@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: grid;
+            grid-template-columns: 30px 30px 20px 30px ;
+            background-color: rgb(240,240,240);
+            width: 150px;
+            margin-left: 30px;
+             align-items: center;
+             align-content: center;
+             border-radius: 20px;
+             height: 40px;
+             padding-left: 20px;
+        }
+        .image1{
+            width: 23px;
+            height: 23px;
+        }
+        .image3,.image4{
+            color: black;
+            
+
+        }
+        .image2{
+            width: 28px;
+            height: 26px;
+        }
+        .likes{
+           font-family: Arial;
+           font-size: 16px;
+           font-weight: bold;
+        }
+        .line{
+            font-size: 25px;
+            color: rgb(200,200,200);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+   <div>
+    <img src="images.png" class="image1">
+    </div>
+    <div>
+        <p class="likes">0</p>
+    </div>
+    <div>
+        <p class="line">|</p>
+    </div>
+    <div>
+    <img src="images (1).png" class="image2">
+   </div>
+   </div>
+   
+<script>
+    let message = document.querySelector('.likes').innerHTML ;  
+const image = document.querySelector('.image1');
+const imag = document.querySelector('.image2');
+
+
+
+image.addEventListener('click', function(){
+message+=1;
+document.querySelector('.likes').innerHTML = message;
+
+document.querySelector('.image1').classList.add('.image3');
+});
+
+
+
+imag.addEventListener('click', function(){
+message -= 1;
+
+document.querySelector('.likes').innerHTML = message;
+
+document.querySelector('.image2').classList.add('.image4');
+});
+
+</script>
+
+</body>
+</html>
