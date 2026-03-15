@@ -21,11 +21,16 @@
             width: 23px;
             height: 23px;
         }
-        .image3,.image4{
-            color: black;
-            
+       .updated{
+    transform: scale(1.2);
 
-        }
+         
+    }
+    .updated:active{
+       background-color: rgb(240, 240, 240);
+     font-size: 16px;
+     font-family: Arial;
+    }
         .image2{
             width: 28px;
             height: 26px;
@@ -58,29 +63,27 @@
    </div>
    
 <script>
-    let message = document.querySelector('.likes').innerHTML ;  
+   let message = Number(document.querySelector('.likes').innerHTML);
+
 const image = document.querySelector('.image1');
 const imag = document.querySelector('.image2');
-
-
+const likes = document.querySelector('.likes');
 
 image.addEventListener('click', function(){
-message+=1;
-document.querySelector('.likes').innerHTML = message;
+    message += 1;
+    likes.innerHTML = message;
 
-document.querySelector('.image1').classList.add('.image3');
+    image.classList.toggle('updated');
 });
-
-
 
 imag.addEventListener('click', function(){
-message -= 1;
+    if(message > 0){
+        message -= 1;
+        likes.innerHTML = message;
 
-document.querySelector('.likes').innerHTML = message;
-
-document.querySelector('.image2').classList.add('.image4');
+        imag.classList.toggle('updated');
+    }
 });
-
 </script>
 
 </body>
