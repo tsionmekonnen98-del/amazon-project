@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .Quantity,.count{
+            font-family: Arial;
+            font-size: 18px;
+            color: black;
+        }
+        .toUpdate,.toDelete{
+         font-size: 18px;
+         color: rgba(37, 129, 233);
+         margin-left: 7px;
+         margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="Quantity">Quantity:</span>
+        <span class="count">2</span>
+        <span class="toUpdate">Update</span>
+        <span class="toDelete">Delete</span>
+
+    </div>
+
+
+    <script>
+        const quantity = document.querySelector('.count');
+        const toConvert = document.querySelector('.toUpdate');
+        const toMove = document.querySelector('.toDelete');
+
+        toConvert.addEventListener('click', ()=>{
+            let change = toConvert.innerHTML;
+
+            if(change === "Update"){
+            toConvert.innerHTML = "Save";
+            quantity.innerHTML = '<input type ="text" class = "js-toAdd" style ="width: 30px" onkeydown = type(key);>'; 
+
+
+           const input = document.querySelector('.js-toAdd');
+
+
+           input.addEventListener('keydown',(event) =>{
+             if(event.key === "Enter"){
+                saveValue();
+             }
+           });
+
+            input.focus();
+         
+            }else {
+                saveValue();
+            }
+        });
+
+
+
+
+        function saveValue(){
+
+            const input = document.querySelector('.js-toAdd');
+
+            toConvert.innerHTML ="Update";
+
+            quantity.innerHTML = input.value;
+            
+        }
+
+        toMove.addEventListener('click',()=>{
+         
+           let value = parseInt(quantity.innerHTML)|| 0;
+        if(value > 0){
+           value -= 1;
+        }
+          quantity.innerHTML = value;
+        });
+      
+     
+    </script>
+</body>
+</html>
